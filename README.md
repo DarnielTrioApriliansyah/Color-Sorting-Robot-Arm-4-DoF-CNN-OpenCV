@@ -569,7 +569,7 @@ dataset/
 Run the training program:
 
 ```bash
-python3 train_model.py
+python3 training.py
 ```
 
 After training, the best model should be available as:
@@ -595,7 +595,7 @@ Make sure the webcam is correctly connected and the camera index in the program 
 Run:
 
 ```bash
-python3 color_sorting.py
+python3 testing.py
 ```
 
 The webcam interface will appear and the system will begin classifying objects in real-time.
