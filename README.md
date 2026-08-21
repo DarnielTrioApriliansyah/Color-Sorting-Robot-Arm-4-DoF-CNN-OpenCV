@@ -30,9 +30,6 @@ The system captures objects using a webcam, classifies their color using a train
   - [Training Result](#Training-Result)
   - [Color Classification](#Color-Classification)
   - [Robot Arm Sorting](#Robot-Arm-Sorting)
-- [Project Structure](#Project-Structure)
-- [Reference](#Reference)
-- [Conclusion](#Conclusion)
 
 ---
 
@@ -63,7 +60,7 @@ The main goal of this project is to integrate **deep learning, computer vision, 
 ### Raspberry Pi 4
 
 <p align="center">
-  <img src="images/raspberry_pi_4.jpg" width="500">
+  <img src="images/rasp.jpg" width="500">
 </p>
 
 Raspberry Pi 4 is a single-board computer that can be used as a computing and control platform for robotics, automation, and computer vision applications.
@@ -82,10 +79,6 @@ The Raspberry Pi is connected to the robot arm and webcam and operates with a Ra
 ---
 
 ### Computer Vision
-
-<p align="center">
-  <img src="images/computer_vision.jpg" width="500">
-</p>
 
 Computer vision is a field that enables computers to obtain information from digital images or video.
 
@@ -150,7 +143,7 @@ The dataset is divided into training and testing data using an **80:20 split**, 
 ### Robot Arm 4 DoF
 
 <p align="center">
-  <img src="images/robot_arm.jpg" width="500">
+  <img src="images/arm.jpg" width="500">
 </p>
 
 A 4 Degree of Freedom robot arm consists of four independently controlled servo-driven movements.
@@ -164,7 +157,7 @@ The mechanical system uses an acrylic 4 DoF robot arm kit with four SG90 servo m
 ### Servo Motor
 
 <p align="center">
-  <img src="images/sg90.jpg" width="400">
+  <img src="images/servo.jpg" width="400">
 </p>
 
 The **SG90 servo motor** is used as the actuator for the robot arm.
@@ -210,7 +203,7 @@ The hardware performs object manipulation, while the software performs image acq
 ### Hardware Design
 
 <p align="center">
-  <img src="images/schematic.png" width="1000">
+  <img src="images/Skematik Armbot.png" width="1000">
 </p>
 
 The hardware consists of:
@@ -625,7 +618,7 @@ The CNN model will classify the object, and the robot arm will move according to
 ### Training Result
 
 <p align="center">
-  <img src="images/accuracy_plot.png" width="700">
+  <img src="images/training.png" width="700">
 </p>
 
 The accuracy graph shows the performance of the CNN model during training. Based on the documented training result, the model reached approximately **100% accuracy** during the 50 training epochs.
@@ -637,7 +630,7 @@ The training result indicates that the CNN was able to learn the visual patterns
 ### Loss Result
 
 <p align="center">
-  <img src="images/loss_plot.png" width="700">
+  <img src="images/loss.png" width="700">
 </p>
 
 The loss graph represents the error produced by the model during the learning process.
@@ -649,7 +642,7 @@ The documented result shows that the error reached approximately **0.0**, corres
 ### Confusion Matrix
 
 <p align="center">
-  <img src="images/confusion_matrix.png" width="700">
+  <img src="images/confusion.png" width="700">
 </p>
 
 A confusion matrix is generated to evaluate the classification results for the five classes:
@@ -669,7 +662,7 @@ The confusion matrix is generated using the test dataset and is used to observe 
 ### Color Classification
 
 <p align="center">
-  <img src="images/color_classification.png" width="900">
+  <img src="images/null.png" width="900">
 </p>
 
 During real-time testing, the webcam interface displays the detected classification.
@@ -707,7 +700,11 @@ The robot first moves from its initial position toward the object, then the grip
 #### Yellow Object
 
 <p align="center">
-  <img src="images/sorting_yellow.jpg" width="800">
+  <img src="images/kuning.png" width="800">
+</p>
+
+<p align="center">
+  <img src="images/kuning 2.png" width="800">
 </p>
 
 The robot detects the yellow object and moves it toward the designated yellow sorting location.
@@ -717,7 +714,11 @@ The robot detects the yellow object and moves it toward the designated yellow so
 #### Blue Object
 
 <p align="center">
-  <img src="images/sorting_blue.jpg" width="800">
+  <img src="images/biru.png" width="800">
+</p>
+
+<p align="center">
+  <img src="images/biru 2.png" width="800">
 </p>
 
 The robot detects the blue object and moves it toward the designated blue sorting location.
@@ -727,7 +728,11 @@ The robot detects the blue object and moves it toward the designated blue sortin
 #### Red Object
 
 <p align="center">
-  <img src="images/sorting_red.jpg" width="800">
+  <img src="images/merah.png" width="800">
+</p>
+
+<p align="center">
+  <img src="images/merah 2.png" width="800">
 </p>
 
 The robot detects the red object and moves it toward the designated red sorting location.
@@ -737,7 +742,11 @@ The robot detects the red object and moves it toward the designated red sorting 
 #### Black Object
 
 <p align="center">
-  <img src="images/sorting_black.jpg" width="800">
+  <img src="images/hitam.png" width="800">
+</p>
+
+<p align="center">
+  <img src="images/hitam 2.png" width="800">
 </p>
 
 The robot detects the black object and moves it toward the designated black sorting location.
@@ -745,68 +754,3 @@ The robot detects the black object and moves it toward the designated black sort
 The documented testing shows that objects detected by color are placed into sorting boxes corresponding to their detected categories.
 
 ---
-
-## Project Structure
-
-```text
-Color-Sorting-Robot-Arm-4-DoF-CNN-OpenCV/
-│
-├── README.md
-│
-├── code/
-│   ├── collect_dataset.py
-│   ├── train_model.py
-│   └── color_sorting.py
-│
-├── dataset/
-│   ├── biru/
-│   ├── hitam/
-│   ├── kuning/
-│   ├── merah/
-│   └── null/
-│
-├── model/
-│   └── best_model.keras
-│
-├── images/
-│   ├── raspberry_pi_4.jpg
-│   ├── robot_arm.jpg
-│   ├── sg90.jpg
-│   ├── webcam.jpg
-│   ├── computer_vision.jpg
-│   ├── opencv.png
-│   ├── cnn.png
-│   ├── schematic.png
-│   ├── accuracy_plot.png
-│   ├── loss_plot.png
-│   ├── confusion_matrix.png
-│   ├── color_classification.png
-│   ├── sorting_yellow.jpg
-│   ├── sorting_blue.jpg
-│   ├── sorting_red.jpg
-│   └── sorting_black.jpg
-│
-└── LICENSE
-```
-
----
-
-## Reference
-
-The original project documentation provides the source code and dataset repository:
-
-[Color Sorting Robot Arm 4 DoF Based on CNN and OpenCV](https://github.com/gilangpps/Color-Sorting-Robot-Arm-4-DoF-Berbasis-CNN-dan-OpenCV.git)
-
-The project documentation states that the programming files and dataset can be downloaded from the GitHub repository.
-
----
-
-## Conclusion
-
-This project demonstrates the integration of **computer vision, deep learning, and robotic arm control** for automatic color sorting.
-
-A webcam captures the object, OpenCV prepares the image, and a CNN model classifies the object into one of five classes: **blue, black, yellow, red, or null**.
-
-The classification result is then used by Raspberry Pi 4 to control four SG90 servo motors. Each color has a predefined servo movement sequence that directs the robot arm to the appropriate sorting location.
-
-The documented CNN training results reached approximately **100% accuracy**, while the reported training error reached approximately **0.0**. The real-time testing further demonstrates the integration between the CNN classification system and the 4 DoF robot arm for automatic color sorting.
